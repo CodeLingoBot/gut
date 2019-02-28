@@ -15,7 +15,7 @@ func (ctx *SyncContext) GutRevParseHead() (commit string, err error) {
 	return strings.TrimSpace(stdout), nil
 }
 
-// Start a git-daemon on the host, bound to port gutd_bind_port on the *localhost* network interface only.
+// GutDaemon starts a git-daemon on the host, bound to port gutd_bind_port on the *localhost* network interface only.
 // `autossh` will create a tunnel to expose this port as gutd_connect_port on the other host.
 func (ctx *SyncContext) GutDaemon(repoName string, bindPort int) (err error) {
 	basePath := ctx.AbsPath(GutDaemonPath)
